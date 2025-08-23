@@ -1,0 +1,112 @@
+.pd-wrap {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 24px 16px 60px;
+}
+
+.pd-header {
+  text-align: center;
+}
+
+.pd-period {
+  font-size: 16px;
+  margin-top: 4px;
+}
+
+.pd-skills {
+  margin: 12px auto 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.pd-skill-chip {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.06);
+  font-size: 14px;
+}
+
+.pd-summary {
+  text-align: center;
+  margin: 8px auto 14px;
+}
+
+.pd-description {
+  max-width: 800px;
+  margin: 10px auto 24px;
+  text-align: center; /* centered description as requested */
+  line-height: 1.7;
+  font-size: 18px;
+}
+
+.pd-stack {
+  display: grid;
+  gap: 18px;
+  margin-top: 12px;
+}
+
+.pd-stack-item img,
+.pd-stack-item video {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.08);
+}
+
+.pd-carousel {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.pd-media img,
+.pd-media video {
+  width: 100%;
+  max-height: 560px;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.08);
+}
+
+.pd-caption {
+  font-size: 14px;
+  opacity: 0.85;
+  margin-top: 8px;
+}
+
+.pd-controls {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.pd-controls button {
+  border: none;
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+}
+
+.pd-links {
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.pd-link {
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.06);
+  text-decoration: none;
+}
+
+.pd-back {
+  margin-top: 28px;
+  text-align: center;
+}

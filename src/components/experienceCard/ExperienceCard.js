@@ -35,7 +35,7 @@ class ExperienceCard extends Component {
           {index !== totalCards - 1 && (
             <div
               style={{
-                height: 190,
+                height: 350,
                 width: 2,
                 backgroundColor: `${theme.headerColor}`,
                 position: "absolute",
@@ -98,16 +98,39 @@ class ExperienceCard extends Component {
                   </div>
                 </div>
               </div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "flex-start",
-                  marginTop: 20,
-                }}
-              >
-                <div className="repo-description" />
-                {experience["description"]}
+              <div className="experience-card-description">
+                {experience.points ? (
+                  <ul className="experience-points">
+                    {experience.points.map((point, idx) => (
+                      <li key={idx}>{point}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p>{experience["description"]}</p>
+                )}
               </div>
+
+              {experience.softwareSkills && (
+                <div className="experience-software-skills">
+                  {experience.softwareSkills.map((logo, idx) => (
+                    <div
+                      key={idx}
+                      className="experience-skill-icon"
+                      title={logo.skillName} // ✅ hover tooltip now works
+                    >
+                      <span
+                        className="iconify"
+                        data-icon={logo.fontAwesomeClassname}
+                        style={{
+                          fontSize: "28px",
+                          margin: "0 12px",
+                          ...logo.style,
+                        }}
+                      ></span>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </Fade>

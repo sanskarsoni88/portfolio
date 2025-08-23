@@ -25,3 +25,16 @@
 .skill-image {
   height: 48px;
 }
+.software-skill-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  cursor: pointer;
+  font-size: 32px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.software-skill-icon:hover {
+  transform: scale(1.2);
+}

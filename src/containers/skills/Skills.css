@@ -35,6 +35,7 @@
   font-weight: 400;
   font-family: "Google Sans Regular";
   line-height: normal;
+  text-align: center;
 }
 
 /* Media Query */
@@ -82,4 +83,21 @@
   .skills-image-div > * {
     margin-top: 0px;
   }
+}
+
+.other-skills {
+  text-align: center;
+}
+
+.other-skills h1 {
+  text-align: center; /* centers the heading */
+}
+
+.other-skills .software-skill-inline {
+  justify-content: center; /* centers the icons */
+}
+
+.other-skills p {
+  display: inline-block; /* keeps multi-line points neatly aligned */
+  text-align: left; /* so line breaks look natural */
 }

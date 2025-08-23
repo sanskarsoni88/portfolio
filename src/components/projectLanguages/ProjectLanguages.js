@@ -1,35 +1,25 @@
 import React, { Component } from "react";
 import "./ProjectLanguages.css";
-import { OverlayTrigger, Tooltip } from "react-bootstrap";
 
 class ProjectLanguages extends Component {
   render() {
     return (
       <div>
-        <div className="software-skills-main-div">
+        <div className="project-languages-main-div">
           <ul className="dev-icons-languages">
-            {this.props.logos.map((logo) => {
+            {this.props.logos.map((logo, idx) => {
               return (
-                <OverlayTrigger
-                  key={logo.name}
-                  placement={"top"}
-                  overlay={
-                    <Tooltip id={`tooltip-top`}>
-                      <strong>{logo.name}</strong>
-                    </Tooltip>
-                  }
+                <li
+                  key={idx}
+                  className="project-skill-icon"
+                  title={logo.name} // 👈 native hover tooltip
                 >
-                  <li
-                    className="software-skill-inline-languages"
-                    name={logo.skillName}
-                  >
-                    <span
-                      className="iconify"
-                      data-icon={logo.iconifyClass}
-                      data-inline="false"
-                    ></span>
-                  </li>
-                </OverlayTrigger>
+                  <span
+                    className="iconify"
+                    data-icon={logo.iconifyClass}
+                    style={logo.style}
+                  ></span>
+                </li>
               );
             })}
           </ul>

@@ -1,5 +1,5 @@
 .educations-header {
-  font-size: 40px;
+  font-size: 60px;
   line-height: 1.1;
   font-family: "Google Sans Regular";
   text-align: center;
@@ -15,4 +15,14 @@
   .educations-header {
     font-size: 30px;
   }
+}
+
+.educations-body-div {
+  margin-top: 0px !important; /* remove big gap above cards */
+  padding-top: 0px !important;
+}
+
+.basic-education {
+  margin-top: 0px !important;
+  padding-top: 0px !important;
 }

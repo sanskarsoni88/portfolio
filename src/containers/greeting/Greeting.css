@@ -26,7 +26,7 @@
   margin-bottom: 30px;
 }
 .button-greeting-div {
-  display: flex;
+  display: none;
   margin-top: 20px;
 }
 
@@ -89,7 +89,7 @@
 
   .portfolio-repo-btn-div {
     width: 100%;
-    display: flex;
+    display: none;
     justify-content: center;
   }
 }

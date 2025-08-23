@@ -36,7 +36,11 @@ class SkillSection extends Component {
                 </div>
               </Fade>
 
-              <div className="skills-text-div">
+              <div
+                className={`skills-text-div ${
+                  skill.title === "Other Software Skills" ? "other-skills" : ""
+                }`}
+              >
                 <Fade right duration={1000}>
                   <h1 className="skills-heading" style={{ color: theme.text }}>
                     {skill.title}
