@@ -1,65 +1,41 @@
-import React from "react";
+//
+
+// src/components/topButton/TopButton.js
+import React, { useEffect, useCallback } from "react";
 import "./TopButton.css";
 
 export default function TopButton({ theme }) {
-  function GoUpEvent() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  }
+  const handleScroll = useCallback(() => {
+    const btn = document.getElementById("topButton");
+    if (!btn) return; // guard if not mounted yet
+    const y =
+      window.pageYOffset ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop ||
+      0;
+    btn.style.display = y > 20 ? "block" : "none";
+  }, []);
 
-  function scrollFunction() {
-    if (
-      document.body.scrollTop > 30 ||
-      document.documentElement.scrollTop > 30
-    ) {
-      document.getElementById("topButton").style.visibility = "visible";
-    } else {
-      document.getElementById("topButton").style.visibility = "hidden";
-    }
-  }
+  useEffect(() => {
+    // attach safely on mount, clean up on unmount
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    // run once to set initial state
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
 
-  window.onscroll = function () {
-    scrollFunction();
-  };
-
-  const onMouseEnter = (color, bgColor) => {
-    /* For the button */
-    const topButton = document.getElementById("topButton");
-    topButton.style.color = color;
-    topButton.style.backgroundColor = bgColor;
-
-    /* For arrow icon */
-    const arrow = document.getElementById("arrow");
-    arrow.style.color = color;
-    arrow.style.backgroundColor = bgColor;
-  };
-
-  const onMouseLeave = (color, bgColor) => {
-    /* For the button */
-    const topButton = document.getElementById("topButton");
-    topButton.style.color = color;
-    topButton.style.backgroundColor = bgColor;
-
-    /* For arrow icon */
-    const arrow = document.getElementById("arrow");
-    arrow.style.color = color;
-    arrow.style.backgroundColor = bgColor;
-  };
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <div
-      onClick={GoUpEvent}
+    <button
       id="topButton"
-      style={{
-        color: theme.body,
-        backgroundColor: theme.text,
-        border: `solid 1px ${theme.text}`,
-      }}
-      title="Go up"
-      onMouseEnter={() => onMouseEnter(theme.text, theme.body)}
-      onMouseLeave={() => onMouseLeave(theme.body, theme.text)}
+      aria-label="Back to top"
+      className="topButton"
+      onClick={scrollToTop}
+      // hidden until scrolled
+      style={{ display: "none", backgroundColor: theme?.accentBright }}
     >
-      <i className="fas fa-arrow-up" id="arrow" aria-hidden="true" />
-    </div>
+      ↑
+    </button>
   );
 }

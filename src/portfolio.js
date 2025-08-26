@@ -2,14 +2,14 @@
 
 // Website related settings
 const settings = {
-  isSplash: true, // Change this to false if you don't want Splash screen.
+  isSplash: false, // Change this to false if you don't want Splash screen.
 };
 
 //SEO Related settings
 const seo = {
   title: "Sanskar Soni",
   description:
-    "A passionate individual who always thrives to work on end to end products which develop sustainable and scalable social and technical systems to create impact.",
+    "An engineer driven to design intelligent, multidisciplinary systems—merging AI, robotics, and embedded design into products that shape the future of technology.",
   og: {
     title: "Sanskar Soni's Portfolio",
     type: "website",
@@ -21,12 +21,13 @@ const seo = {
 const greeting = {
   title: "Sanskar Soni",
   logo_name: "SanskarSoni",
-  nickname: "",
+  nickname: "BASc in Integrated Engineering from UBC",
   subTitle:
-    "A passionate individual who always thrives to work on end to end products which develop sustainable and scalable social and technical systems to create impact.",
+    "An engineer driven to design intelligent, multidisciplinary systems—merging AI, robotics, and embedded design into products that shape the future of technology.",
   resumeLink:
     "https://drive.google.com/file/d/1GeuDxQVDTRGHs0DAE2MzrdCADYkwWvE5/view?usp=sharing",
-  portfolio_repository: "",
+  portfolio_repository:
+    "https://drive.google.com/file/d/1GeuDxQVDTRGHs0DAE2MzrdCADYkwWvE5/view?usp=sharing",
   githubProfile: "https://github.com/sanskarsoni88",
 };
 
@@ -246,8 +247,8 @@ const degrees = {
       title: "University of British Columbia",
       subtitle: "BASc in Integrated Engineering",
       logo_path: "ubc-logo.png",
-      alt_name: "IIITDM Kurnool",
-      duration: "2016 - 2020",
+      alt_name: "UBC Vancouver",
+      duration: "2020 - 2025",
       descriptions: [
         "⚡ Specialized in Computer and Electrical Engineering.",
         "⚡ Developed skills via projects in embedded programming, robotics, systems engineering, simulations, AI and controls.",
@@ -371,7 +372,7 @@ const experience = {
 const projectsHeader = {
   title: "Projects",
   description:
-    "My projects makes use of vast variety of latest technology tools. My best experience is to create Data Science projects and deploy them to web applications using cloud infrastructure.",
+    "My projects makes use of vast variety of latest technology tools. My best experience is in creating robotics and AI products.",
   avatar_image_path: "projects_image.svg",
 };
 
@@ -389,9 +390,9 @@ const publications = {
 const contactPageData = {
   contactSection: {
     title: "Contact Me",
-    profile_image_path: "animated_ashutosh.png",
+    profile_image_path: "profile_pic.png",
     description:
-      "I am available on almost every social media. You can message me, I will reply within 24 hours. I can help you with ML, AI, React, Android, Cloud and Opensource Development.",
+      "I am available on almost every social media, best reachable via email. You can message me, I will reply within 24 hours.",
   },
   blogSection: {
     title: "Blogs",
@@ -402,7 +403,7 @@ const contactPageData = {
   },
   addressSection: {
     title: "Address",
-    subtitle: "Saratoga Ave, San Jose, CA, USA 95129",
+    subtitle: "Vancouver, BC. CA",
     locality: "San Jose",
     country: "USA",
     region: "California",
@@ -420,28 +421,185 @@ const contactPageData = {
 // Project detail pages (for /project/:id)
 const detailedProjects = [
   {
-    id: "beezy", // URL slug -> /project/beezy
-    title: "Beezy – Multi-robot Swarm Planner",
-    period: "Jan 2024 – Apr 2024",
-    summary: "Swarm path planning with centralized coordinator.",
-    skills: ["Python", "ROS2", "Gazebo", "A* / D* Lite", "Docker"],
+    id: "Minesweeper", // URL slug -> /project/beezy
+    title: "Minesweeper – Autonomous Demining Rover",
+    period: "Sep 2023 – Apr 2024",
+    summary: "Autonomous rover for landmine detection and flagging.",
+    skills: [
+      "Python",
+      "ROS2",
+      "C/C++",
+      "Gazebo",
+      "Raspberry Pi",
+      "ESP32",
+      "I2C",
+      "Computer Vision",
+      "Systems Engineering",
+    ],
     description:
-      "I designed and implemented a centralized planner for multi-robot task allocation and collision‑free routing. The system integrates ROS2 nodes, runs planning in a coordinator container, and dispatches paths to agents via topics.",
+      "The MineSweeper rover helps humanitarian demining organizations automatically detect and map landmines in war torn lands, reducing the need for human labour. I was responsible for sensor fusion, computer vision, navigation, simulations and the software controls.",
+    display: "carousel", // 'carousel' | 'stack'
+    media: [
+      {
+        type: "video",
+        src: "minesweeper_demo_video_sped.mp4",
+        caption: "Render of the rover's physical design.",
+      },
+      {
+        type: "image",
+        src: "minesweeper_systems_overview.jpg",
+        caption: "High level robot systems engineering.",
+      },
+      {
+        type: "image",
+        src: "Minesweeper_software_design.jpg",
+        caption: "High level software systems overview.",
+      },
+      {
+        type: "image",
+        src: "minesweeper_cv_algorithm.png",
+        caption: "Landmine computer vision process",
+      },
+      {
+        type: "image",
+        src: "minesweeper_inference.png",
+        caption: "Object Detection in action",
+      },
+      {
+        type: "image",
+        src: "minesweeper_urdf.png",
+        caption: "URDF of robot developed for simulations",
+      },
+    ],
+    softwareSkills: [
+      // 👈 for card icons
+      {
+        skillName: "Python",
+        fontAwesomeClassname: "ion-logo-python",
+        style: { color: "#3776AB" },
+      },
+      { skillName: "ROS2", fontAwesomeClassname: "logos:ros" },
+      { skillName: "Gazebo", fontAwesomeClassname: "devicon:gazebo-wordmark" },
+      {
+        skillName: "C/C++",
+        fontAwesomeClassname: "streamline-freehand:file-code-c-plus-plus",
+      },
+      { skillName: "Linux", fontAwesomeClassname: "flat-color-icons:linux" },
+      {
+        skillName: "YOLO object detection",
+        fontAwesomeClassname: "tabler:camera-ai",
+      },
+    ],
+    links: [
+      { label: "GitHub", url: "https://github.com/sanskarsoni88/beezy" },
+      // { label: "Exclusive Feature", url: "https://example.com/beezy-feature" }
+    ],
+  },
+
+  {
+    id: "beezy", // URL slug -> /project/beezy
+    title: "Beezy – Smart Beehive",
+    period: "Sep 2022 – Apr 2023",
+    summary: "A comprehensive smart beehive that promotes hive health.",
+    skills: [
+      "Python",
+      "ROS2",
+      "Raspberry Pi",
+      "C/C++",
+      "ESP32",
+      "UART",
+      "Object Detection",
+      "Flask Server",
+    ],
+    description:
+      "Beezy smart beehives are fit with feeders and various sensors to provide relevant telemetric data to beekeepers. They also autonomously test for varroa mite infestations - the biggest threat to a hive's population.",
     display: "carousel", // 'carousel' | 'stack'
     media: [
       {
         type: "image",
-        src: "/assets/images/sarcomere_logo.png",
-        caption: "High‑level pipeline of the coordinator and agents.",
+        src: "beezy_design_large.png",
+        caption: "Physical design of beezy smart beehives.",
       },
       {
-        type: "video",
-        src: "/assets/images/ubc-logo.png",
-        caption: "Demo: 8 agents completing tasks without collisions.",
+        type: "image",
+        src: "Beezy_systems_architecture.jpg",
+        caption: "High level architecture of beezy smart beehives.",
+      },
+      {
+        type: "image",
+        src: "Beezy_AI_pipeline.jpg",
+        caption: "Computer vision pipeline used for detecting varroa mites",
+      },
+      {
+        type: "image",
+        src: "beezy_inference.png",
+        caption: "YOLO Object Detection in action.",
+      },
+    ],
+    softwareSkills: [
+      // 👈 for card icons
+      {
+        skillName: "Python",
+        fontAwesomeClassname: "ion-logo-python",
+        style: { color: "#3776AB" },
+      },
+      {
+        skillName: "YOLO object detection",
+        fontAwesomeClassname: "tabler:camera-ai",
+      },
+      { skillName: "Flask Server", fontAwesomeClassname: "logos:flask" },
+      {
+        skillName: "C/C++",
+        fontAwesomeClassname: "streamline-freehand:file-code-c-plus-plus",
       },
     ],
     links: [
-      // { label: "GitHub", url: "https://github.com/yourname/beezy" },
+      {
+        label: "Read the exclusive feature by UBC Engineering",
+        url:
+          "https://engineering.ubc.ca/spotlight/student-project/beezy-remotely-monitoring-beehives-to-detect-and-prevent-infestations",
+      },
+      { label: "GitHub", url: "https://github.com/sanskarsoni88/beezy" },
+    ],
+  },
+
+  {
+    id: "Cobot Muscle", // URL slug -> /project/beezy
+    title: "Cobot Muscle – 4DOF collaborative robot",
+    period: "Jan 2022 – Apr 2022",
+    summary: "A collaborative robot for remote control.",
+    skills: ["C++", "Matlab", "ESP32", "Systems Integration", "Simulation"],
+    description:
+      "I designed the mapping for a 4DOF collaborative robot arm. I also simulated its inverse kinematics in Matlab.",
+    display: "carousel", // 'carousel' | 'stack'
+    media: [
+      {
+        type: "image",
+        src: "cobot_slave_arm_real.png",
+        caption: "Physical build of the acting robot arm.",
+      },
+      {
+        type: "video",
+        src: "cobot_demo_video.mp4",
+        caption: "Demo: Acting arm being controlled by controller arm.",
+      },
+      {
+        type: "video",
+        src: "4DOF_robot_IK_cylinders.mp4",
+        caption: "Matlab simulation of the inverse kinematics of the arm.",
+      },
+    ],
+    softwareSkills: [
+      // 👈 for card icons
+      {
+        skillName: "Python",
+        fontAwesomeClassname: "ion-logo-python",
+        style: { color: "#3776AB" },
+      },
+      { skillName: "Matlab", fontAwesomeClassname: "devicon:matlab" },
+    ],
+    links: [
+      { label: "GitHub", url: "https://github.com/sanskarsoni88/beezy" },
       // { label: "Exclusive Feature", url: "https://example.com/beezy-feature" }
     ],
   },

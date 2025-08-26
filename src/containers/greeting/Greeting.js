@@ -19,7 +19,7 @@ export default function Greeting(props) {
               </h1>
               {greeting.nickname && (
                 <h2 className="greeting-nickname" style={{ color: theme.text }}>
-                  ( {greeting.nickname} )
+                  {greeting.nickname}
                 </h2>
               )}
               <p
@@ -31,7 +31,7 @@ export default function Greeting(props) {
               <SocialMedia theme={theme} />
               <div className="portfolio-repo-btn-div">
                 <Button
-                  text="⭐ Star Me On Github"
+                  text="Link to Resume"
                   newTab={true}
                   href={greeting.portfolio_repository}
                   theme={theme}

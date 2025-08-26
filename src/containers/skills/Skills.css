@@ -10,15 +10,6 @@
   text-align: center;
 }
 
-.skills-text {
-  font-size: 20px;
-}
-
-.skills-text-div {
-  margin-left: 50px;
-  font-family: "Google Sans Regular";
-}
-
 .skills-main-div > * {
   flex: 1;
   margin-bottom: 30px;
@@ -70,11 +61,12 @@
     margin: 20px;
   }
   .skills-text {
-    font-size: 16px;
+    font-size: 20px;
   }
   .skills-text-subtitle {
     font-size: 16px;
     text-align: center;
+    line-height: 1.6;
   }
   .skills-image-div {
     /* display: none; */
@@ -100,4 +92,9 @@
 .other-skills p {
   display: inline-block; /* keeps multi-line points neatly aligned */
   text-align: left; /* so line breaks look natural */
+}
+
+.subTitle.skills-text {
+  font-size: 18px; /* or whatever you want */
+  line-height: 1.6;
 }

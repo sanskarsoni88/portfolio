@@ -192,3 +192,7 @@
     text-align: center;
   }
 }
+
+.contact-header-detail-text.subTitle {
+  font-size: 20px !important;
+}

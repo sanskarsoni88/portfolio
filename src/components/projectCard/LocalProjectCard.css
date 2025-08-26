@@ -38,3 +38,54 @@
   opacity: 0.8;
   font-size: 14px;
 }
+
+.repo-skills {
+  margin-top: 8px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.repo-skill-chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 6px;
+  border-radius: 8px;
+  font-size: 12px;
+  color: #333;
+}
+
+.repo-skill-chip .iconify {
+  font-size: 18px;
+}
+
+.software-skill-inline {
+  position: relative;
+  display: inline-block;
+  font-size: 2rem;
+  margin: 0 6px;
+  cursor: pointer;
+}
+
+.software-skill-inline::after {
+  content: attr(name);
+  position: absolute;
+  bottom: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #e0e0e0;
+  color: #000;
+  font-size: 12px;
+  padding: 3px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  z-index: 10;
+}
+
+.software-skill-inline:hover::after {
+  opacity: 1;
+}

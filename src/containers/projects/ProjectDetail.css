@@ -1,18 +1,20 @@
+/* OUTER WRAP — grows with viewport but stays sane on ultra-wide */
 .pd-wrap {
-  max-width: 980px;
+  max-width: clamp(980px, 92vw, 1400px);
   margin: 0 auto;
   padding: 24px 16px 60px;
 }
 
+/* HEADER */
 .pd-header {
   text-align: center;
 }
-
 .pd-period {
   font-size: 16px;
   margin-top: 4px;
 }
 
+/* SKILL CHIPS */
 .pd-skills {
   margin: 12px auto 8px;
   display: flex;
@@ -20,7 +22,6 @@
   gap: 8px;
   justify-content: center;
 }
-
 .pd-skill-chip {
   padding: 6px 10px;
   border-radius: 999px;
@@ -28,47 +29,73 @@
   font-size: 14px;
 }
 
+/* SUMMARY / DESCRIPTION */
 .pd-summary {
   text-align: center;
   margin: 8px auto 14px;
 }
-
 .pd-description {
   max-width: 800px;
   margin: 10px auto 24px;
-  text-align: center; /* centered description as requested */
+  text-align: center;
   line-height: 1.7;
   font-size: 18px;
 }
 
+/* --- TWO COLUMN LAYOUT --- */
+.pd-two-col {
+  display: grid;
+  /* Left column is allowed to grow large on desktop */
+  grid-template-columns: minmax(560px, 1.6fr) minmax(320px, 1fr);
+  gap: 40px;
+  align-items: start;
+  margin-top: 12px;
+}
+
+/* Make the right panel sticky on desktop */
+.pd-sticky {
+  position: sticky;
+  top: 96px;
+}
+
+/* MEDIA AREA — give the carousel/stack a responsive width */
+.pd-left .pd-carousel,
+.pd-left .pd-stack {
+  width: clamp(560px, 70vw, 1200px);
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Stack list (when display === "stack") */
 .pd-stack {
   display: grid;
   gap: 18px;
   margin-top: 12px;
 }
 
+/* Media elements fill their wrapper */
 .pd-stack-item img,
-.pd-stack-item video {
+.pd-stack-item video,
+.pd-media img,
+.pd-media video {
+  display: block;
   width: 100%;
-  height: auto;
+  height: auto; /* keep aspect ratio */
   border-radius: 12px;
   box-shadow: 0 2px 14px rgba(0, 0, 0, 0.08);
 }
 
+/* Remove the hard height cap so images can be readable on wide screens */
+/* (If you want a safety cap, use max-height: 75vh) */
+.pd-media {
+  margin-top: 12px;
+}
+
+/* Carousel controls + caption */
 .pd-carousel {
   margin-top: 12px;
   text-align: center;
 }
-
-.pd-media img,
-.pd-media video {
-  width: 100%;
-  max-height: 560px;
-  object-fit: contain;
-  border-radius: 12px;
-  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.08);
-}
-
 .pd-caption {
   font-size: 14px;
   opacity: 0.85;
@@ -82,7 +109,6 @@
   justify-content: center;
   margin-top: 8px;
 }
-
 .pd-controls button {
   border: none;
   border-radius: 999px;
@@ -91,6 +117,7 @@
   cursor: pointer;
 }
 
+/* LINKS */
 .pd-links {
   margin-top: 18px;
   display: flex;
@@ -98,15 +125,46 @@
   gap: 12px;
   justify-content: center;
 }
-
 .pd-link {
   padding: 8px 12px;
   border-radius: 10px;
   background: rgba(0, 0, 0, 0.06);
   text-decoration: none;
 }
-
 .pd-back {
   margin-top: 28px;
   text-align: center;
+}
+
+/* Right column details */
+.pd-right .pd-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.pd-summary {
+  text-align: center;
+  margin: 0 0 10px;
+}
+.pd-description {
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+/* --- RESPONSIVE: stack on tablet/mobile --- */
+@media (max-width: 992px) {
+  .pd-two-col {
+    display: block;
+  }
+  .pd-sticky {
+    position: static;
+  }
+
+  /* Let media take full width on small screens */
+  .pd-left .pd-carousel,
+  .pd-left .pd-stack {
+    width: 100%;
+    max-width: 100%;
+  }
 }
